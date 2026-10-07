@@ -12,7 +12,7 @@ namespace liste_2026_39b
         {
             Console.WriteLine("pozdrav 3-9");
             Console.WriteLine("Kec za gubljenje vremena");
-            Console.WriteLine("pozdrav 3-9");
+            Console.WriteLine("pozdrav sa plaze!");
         }
     }
 }
