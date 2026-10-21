@@ -51,10 +51,55 @@ namespace liste_2026_39b
                     Console.WriteLine($"Sused {g.kraj} tezina {g.tezina}");
                 }
             }
-        }
-        public void Snimi(string ime)
+            /*
+             public void Snimi(string ime)
+{
+    System.IO.StreamWriter sw = new System.IO.StreamWriter(ime);
+    sw.WriteLine(cvor.Length);
+    for (int i = 0; i < cvor.Length; i++)
+    {
+        sw.WriteLine(cvor[i]);
+    }
+    for (int i = 0; i < cvor.Length; i++)
+    {
+        foreach (grana g in lista[i])
         {
-            
+            sw.WriteLine($"{i} {g.kraj} {g.tezina}");
         }
+    }
+    sw.Close();
+}
+public void Ucitaj(string ime)
+{
+    System.IO.StreamReader sr = new System.IO.StreamReader(ime);
+    int n = Convert.ToInt32(sr.ReadLine());
+    cvor = new string[n];
+    for (int i = 0; i < n; i++)
+    {
+        cvor[i] = sr.ReadLine();
+    }
+    lista = new List<grana>[n];
+    for (int i = 0; i < n; i++)
+    {
+        lista[i] = new List<grana>();
+    }
+    while (!sr.EndOfStream)
+    {
+        string[] delovi = sr.ReadLine().Split(' ');
+        int pocetak = Convert.ToInt32(delovi[0]);
+        int kraj = Convert.ToInt32(delovi[1]);
+        int tezina = Convert.ToInt32(delovi[2]);
+        grana nova = new grana();
+        nova.kraj = kraj;
+        nova.tezina = tezina;
+        lista[pocetak].Add(nova);
+    }
+    sr.Close();
+}
+
+              
+             * */
+        }
+
     }
 }
