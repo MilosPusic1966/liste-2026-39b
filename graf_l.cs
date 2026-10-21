@@ -29,7 +29,14 @@ namespace liste_2026_39b
                 int sused = Convert.ToInt32(Console.ReadLine());
                 while (sused != -1)
                 {
-                    Console.WriteLine($"tezina cvora {i}");
+                    Console.WriteLine($"Tezina grane {i} - {sused}");
+                    int tezina = Convert.ToInt32(Console.ReadLine());
+                    grana nova = new grana();
+                    nova.kraj = sused;
+                    nova.tezina = tezina;
+                    lista[i].Add(nova);
+                    Console.WriteLine($"Sused cvora {i}");
+                    sused = Convert.ToInt32(Console.ReadLine());
                 }
 
 
