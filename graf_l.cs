@@ -73,6 +73,7 @@ namespace liste_2026_39b
             System.IO.StreamReader sr = new System.IO.StreamReader("milos_l.txt");
             int n = Convert.ToInt32(sr.ReadLine());
             cvor = new string[n];
+            List<grana>[] lista = new List<grana>[n];
             for (int i = 0; i < n; i++)
             {
                 cvor[i] = sr.ReadLine();
