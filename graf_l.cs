@@ -21,8 +21,31 @@ namespace liste_2026_39b
                 Console.WriteLine("Cvor " + i + "=");
                 cvor[i] = Console.ReadLine();
             }
+            lista = new List<grana>[n];
+            for (int i = 0; i < n; i++)
+            {
+                lista[i] = new List<grana>();
+                Console.WriteLine($"Sused cvora {i}");
+                int sused = Convert.ToInt32(Console.ReadLine());
+                while (sused != -1)
+                {
+                    Console.WriteLine($"tezina cvora {i}");
+                }
+
+
+
+                int m = Convert.ToInt32(Console.ReadLine());
+                
+            }
 
             return;
+        } 
+        public void Ispis()
+        {
+            for (int i = 0; i < cvor.Length; i++)
+            {
+                Console.WriteLine("Cvor " + i + "=" + cvor[i]);
+            }
         }
     }
 }

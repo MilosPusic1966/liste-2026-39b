@@ -13,8 +13,9 @@ namespace liste_2026_39b
         static void Main(string[] args)
         {
             int n=99;
+            graf_l novi=null;
 
-            while(n!=0)
+            while (n!=0)
             {
                 Console.WriteLine("Odaberite:");
                 Console.WriteLine("1: Unos");
@@ -25,12 +26,25 @@ namespace liste_2026_39b
                 n = Convert.ToInt32(Console.ReadLine());
                 switch (n)
                 {
+                    case 0:
+                        Console.WriteLine("Kraj");
+                        break;
                     case 1:
-                        graf_l novi = new graf_l();
-                        novi.
+                        novi = new graf_l();
+                        novi.Unos();
+                        break;
+                    case 4:
+                        if (novi != null)
+                        {
+                            novi.Ispis();
+                        }
                         break;
                     default:
                         break;
+                }
+                if (n == 0)
+                {
+                    break;
                 }
             }
         }
