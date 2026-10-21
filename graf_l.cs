@@ -40,7 +40,7 @@ namespace liste_2026_39b
                 }
             }
             return;
-        } 
+        }
         public void Ispis()
         {
             for (int i = 0; i < cvor.Length; i++)
@@ -51,55 +51,94 @@ namespace liste_2026_39b
                     Console.WriteLine($"Sused {g.kraj} tezina {g.tezina}");
                 }
             }
-            /*
-             public void Snimi(string ime)
-{
-    System.IO.StreamWriter sw = new System.IO.StreamWriter(ime);
-    sw.WriteLine(cvor.Length);
-    for (int i = 0; i < cvor.Length; i++)
-    {
-        sw.WriteLine(cvor[i]);
-    }
-    for (int i = 0; i < cvor.Length; i++)
-    {
-        foreach (grana g in lista[i])
+        }
+        public void Snimi()
         {
-            sw.WriteLine($"{i} {g.kraj} {g.tezina}");
+            System.IO.StreamWriter sw = new System.IO.StreamWriter("milos_l.txt");
+            sw.WriteLine(cvor.Length);
+            for (int i = 0; i < cvor.Length; i++)
+            {
+                sw.WriteLine(cvor[i]);
+                foreach (grana g in lista[i])
+                {
+                    sw.WriteLine(g.kraj);
+                    sw.WriteLine(g.tezina);
+                }
+                sw.WriteLine(-1);
+            }
+            sw.Close();
+        }
+        public void Ucitaj()
+        {
+            System.IO.StreamReader sr = new System.IO.StreamReader("milos_l.txt");
+            int n = Convert.ToInt32(sr.ReadLine());
+            cvor = new string[n];
+            for (int i = 0; i < n; i++)
+            {
+                cvor[i] = sr.ReadLine();
+                lista[i] = new List<grana>();
+                int sused = Convert.ToInt32(sr.ReadLine());
+                while (sused != -1)
+                {
+                    int tezina = Convert.ToInt32(sr.ReadLine());
+                    grana nova = new grana();
+                    nova.kraj = sused;
+                    nova.tezina = tezina;
+                    lista[i].Add(nova);
+                    sused = Convert.ToInt32(sr.ReadLine());
+                }
+            }
+            sr.Close();
         }
     }
-    sw.Close();
+}
+        /*
+         public void Snimi(string ime)
+{
+System.IO.StreamWriter sw = new System.IO.StreamWriter(ime);
+sw.WriteLine(cvor.Length);
+for (int i = 0; i < cvor.Length; i++)
+{
+    sw.WriteLine(cvor[i]);
+}
+for (int i = 0; i < cvor.Length; i++)
+{
+    foreach (grana g in lista[i])
+    {
+        sw.WriteLine($"{i} {g.kraj} {g.tezina}");
+    }
+}
+sw.Close();
 }
 public void Ucitaj(string ime)
 {
-    System.IO.StreamReader sr = new System.IO.StreamReader(ime);
-    int n = Convert.ToInt32(sr.ReadLine());
-    cvor = new string[n];
-    for (int i = 0; i < n; i++)
-    {
-        cvor[i] = sr.ReadLine();
-    }
-    lista = new List<grana>[n];
-    for (int i = 0; i < n; i++)
-    {
-        lista[i] = new List<grana>();
-    }
-    while (!sr.EndOfStream)
-    {
-        string[] delovi = sr.ReadLine().Split(' ');
-        int pocetak = Convert.ToInt32(delovi[0]);
-        int kraj = Convert.ToInt32(delovi[1]);
-        int tezina = Convert.ToInt32(delovi[2]);
-        grana nova = new grana();
-        nova.kraj = kraj;
-        nova.tezina = tezina;
-        lista[pocetak].Add(nova);
-    }
-    sr.Close();
+System.IO.StreamReader sr = new System.IO.StreamReader(ime);
+int n = Convert.ToInt32(sr.ReadLine());
+cvor = new string[n];
+for (int i = 0; i < n; i++)
+{
+    cvor[i] = sr.ReadLine();
+}
+lista = new List<grana>[n];
+for (int i = 0; i < n; i++)
+{
+    lista[i] = new List<grana>();
+}
+while (!sr.EndOfStream)
+{
+    string[] delovi = sr.ReadLine().Split(' ');
+    int pocetak = Convert.ToInt32(delovi[0]);
+    int kraj = Convert.ToInt32(delovi[1]);
+    int tezina = Convert.ToInt32(delovi[2]);
+    grana nova = new grana();
+    nova.kraj = kraj;
+    nova.tezina = tezina;
+    lista[pocetak].Add(nova);
+}
+sr.Close();
 }
 
-              
-             * */
-        }
 
-    }
-}
+         * */
+    
+

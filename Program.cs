@@ -33,6 +33,15 @@ namespace liste_2026_39b
                         novi = new graf_l();
                         novi.Unos();
                         break;
+                    case 2:
+                        if (novi != null) { 
+                          novi.Snimi();
+                        }
+                        break;
+                    case 3:
+                        novi = new graf_l();
+                        novi.Ucitaj();
+                        break;
                     case 4:
                         if (novi != null)
                         {
