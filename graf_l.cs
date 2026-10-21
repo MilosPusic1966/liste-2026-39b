@@ -38,13 +38,7 @@ namespace liste_2026_39b
                     Console.WriteLine($"Sused cvora {i}");
                     sused = Convert.ToInt32(Console.ReadLine());
                 }
-
-
-
-                int m = Convert.ToInt32(Console.ReadLine());
-                
             }
-
             return;
         } 
         public void Ispis()
@@ -52,7 +46,15 @@ namespace liste_2026_39b
             for (int i = 0; i < cvor.Length; i++)
             {
                 Console.WriteLine("Cvor " + i + "=" + cvor[i]);
+                foreach (grana g in lista[i])
+                {
+                    Console.WriteLine($"Sused {g.kraj} tezina {g.tezina}");
+                }
             }
+        }
+        public void Snimi(string ime)
+        {
+            
         }
     }
 }
