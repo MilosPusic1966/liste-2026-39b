@@ -22,6 +22,9 @@ namespace liste_2026_39b
                 Console.WriteLine("2: Snimi");
                 Console.WriteLine("3: Ucitaj");
                 Console.WriteLine("4: Ispis");
+                Console.WriteLine("5: L-M");
+                Console.WriteLine("6: M-L");
+                Console.WriteLine("7: Usmeren");
                 Console.WriteLine("0: Kraj");
                 n = Convert.ToInt32(Console.ReadLine());
                 switch (n)
@@ -46,6 +49,19 @@ namespace liste_2026_39b
                         if (novi != null)
                         {
                             novi.Ispis();
+                        }
+                        break;
+                    case 7:
+                        if (novi != null)
+                        {
+                            if (graf_m.neusmeren(novi))
+                            {
+                                Console.WriteLine("Graf nije usmeren");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Graf je usmeren");
+                            }
                         }
                         break;
                     default:
